@@ -1,24 +1,24 @@
-ConfigMap-01:
+# <span style="font-size: 32px; font-weight: 800; color: #2563eb;">ConfigMap-01:</span>
 
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-11-kubernetes-services$ cd ..
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main$ cd session-12-ingress-configmaps-secrets
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets$ ls
+<pre style="background-color: #1e1e2e; color: #cdd6f4; padding: 16px; border-radius: 8px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.45; overflow-x: auto; border: 1px solid #313244;"><code><span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-11-kubernetes-services</span>$ cd ..
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main</span>$ cd session-12-ingress-configmaps-secrets
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets</span>$ ls
 01-configmap  02-secret  03-ingress  04-full-demo  lab.md  troubleshooting
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets$ cd 01-configmap
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap$ kubectl apply -f configmap/app-config.yaml
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets</span>$ cd 01-configmap
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap</span>$ kubectl apply -f configmap/app-config.yaml
 error: the path "configmap/app-config.yaml" does not exist
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap$ kubectl apply -f app-config.yaml
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap</span>$ kubectl apply -f app-config.yaml
 configmap/yatri-app-config created
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap$ kubectl get yatri-app-config
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap</span>$ kubectl get yatri-app-config
 error: the server doesn't have a resource type "yatri-app-config"
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap$ kubectl get configmap yatri-app-config
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap</span>$ kubectl get configmap yatri-app-config
 NAME               DATA   AGE
 yatri-app-config   5      24s
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap$ kubectl describe configmap yatri-app-config
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap</span>$ kubectl describe configmap yatri-app-config
 Name:         yatri-app-config
 Namespace:    default
 Labels:       app=yatri-backend
-Annotations:  <none>
+Annotations:  &lt;none&gt;
 
 Data
 ====
@@ -46,36 +46,43 @@ PORT:
 BinaryData
 ====
 
-Events:  <none>
+Events:  &lt;none&gt;
+</code></pre>
 
+---
 
-Secret-02:
+# <span style="font-size: 32px; font-weight: 800; color: #2563eb;">Secret-02:</span>
 
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap$ kubectl apply -f db-secret.yaml
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap$ cd ..
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets$ ls
+<pre style="background-color: #1e1e2e; color: #cdd6f4; padding: 16px; border-radius: 8px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.45; overflow-x: auto; border: 1px solid #313244;"><code><span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap</span>$ kubectl apply -f db-secret.yaml
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/01-configmap</span>$ cd ..
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets</span>$ ls
 01-configmap  02-secret  03-ingress  04-full-demo  lab.md  troubleshooting
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets$ cd 02-secret
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret$ kubectl apply -f secret/db-secret.yaml
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets</span>$ cd 02-secret
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret</span>$ kubectl apply -f secret/db-secret.yaml
 error: the path "secret/db-secret.yaml" does not exist
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret$ kubectl apply -f db-secret.yaml
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret</span>$ kubectl apply -f db-secret.yaml
 secret/yatri-db-secret created
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret$ kubectl get secret yatri-db-secret
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret</span>$ kubectl get secret yatri-db-secret
 NAME              TYPE     DATA   AGE
 yatri-db-secret   Opaque   3      8s
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret$ ^C
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret$ kubectl get secret yatri-db-secret -o jsonpath='{.data.POSTGRES_PASSWORD}' | base64 --decode
-secretpasswordamitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secreecho -n "yatri_admin" | base64dmin" | base64
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret</span>$ ^C
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret</span>$ kubectl get secret yatri-db-secret -o jsonpath='{.data.POSTGRES_PASSWORD}' | base64 --decode
+secretpassword
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret</span>$ echo -n "yatri_admin" | base64
 eWF0cmlfYWRtaW4=
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret$ echo -n "secretpassword" | base64
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret</span>$ echo -n "secretpassword" | base64
 c2VjcmV0cGFzc3dvcmQ=
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret$ echo -n "yatri_production_db" | base64
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/02-secret</span>$ echo -n "yatri_production_db" | base64
 eWF0cmlfcHJvZHVjdGlvbl9kYg==
+</code></pre>
 
-FullDemo_04:
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main$ cd session-12-ingress-configmaps-secrets
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets$ cd 04-full-demo
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ minikube start docker-desktop
+---
+
+# <span style="font-size: 32px; font-weight: 800; color: #2563eb;">FullDemo_04:</span>
+
+<pre style="background-color: #1e1e2e; color: #cdd6f4; padding: 16px; border-radius: 8px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.45; overflow-x: auto; border: 1px solid #313244;"><code><span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main</span>$ cd session-12-ingress-configmaps-secrets
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets</span>$ cd 04-full-demo
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ minikube start docker-desktop
 😄  minikube v1.39.0 on Ubuntu 26.04 (kvm/amd64)
 ✨  Using the docker driver based on existing profile
 👍  Starting "minikube" primary control-plane node in "minikube" cluster
@@ -93,7 +100,7 @@ amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-mai
 ❗  /usr/local/bin/kubectl is version 1.34.1, which may have incompatibilities with Kubernetes 1.37.0.
     ▪ Want kubectl v1.37.0? Try 'minikube kubectl -- get pods -A'
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ minikube status
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ minikube status
 minikube
 type: Control Plane
 host: Running
@@ -101,15 +108,15 @@ kubelet: Running
 apiserver: Running
 kubeconfig: Configured
 
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl config current-context
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl config current-context
 minikube
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl apply -f 04-full-demo/configmap.yaml
-kubectl describe configmap yatri-app-config
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl apply -f 04-full-demo/configmap.yaml
 error: the path "04-full-demo/configmap.yaml" does not exist
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl describe configmap yatri-app-config
 Name:         yatri-app-config
 Namespace:    default
 Labels:       app=yatri-backend
-Annotations:  <none>
+Annotations:  &lt;none&gt;
 
 Data
 ====
@@ -137,14 +144,14 @@ PORT:
 BinaryData
 ====
 
-Events:  <none>
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl apply -f configmap.yaml
-kubectl describe configmap yatri-app-config
+Events:  &lt;none&gt;
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl apply -f configmap.yaml
 configmap/yatri-app-config configured
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl describe configmap yatri-app-config
 Name:         yatri-app-config
 Namespace:    default
 Labels:       app=yatri-app
-Annotations:  <none>
+Annotations:  &lt;none&gt;
 
 Data
 ====
@@ -172,14 +179,14 @@ MAX_BOOKING_DAYS:
 BinaryData
 ====
 
-Events:  <none>
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl apply -f secret.yaml
-kubectl describe secret yatri-db-secret
+Events:  &lt;none&gt;
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl apply -f secret.yaml
 secret/yatri-db-secret configured
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl describe secret yatri-db-secret
 Name:         yatri-db-secret
 Namespace:    default
 Labels:       app=yatri-app
-Annotations:  <none>
+Annotations:  &lt;none&gt;
 
 Type:  Opaque
 
@@ -188,40 +195,40 @@ Data
 POSTGRES_DB:        19 bytes
 POSTGRES_PASSWORD:  14 bytes
 POSTGRES_USER:      11 bytes
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl apply -f frontend.yaml
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl apply -f frontend.yaml
 deployment.apps/yatri-frontend created
 service/yatri-frontend-service created
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get pods -l app=yatri-frontend
-kubectl get svc yatri-frontend-service
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get pods -l app=yatri-frontend
 NAME                             READY   STATUS    RESTARTS   AGE
 yatri-frontend-ddcfc4b5f-j7czj   1/1     Running   0          14s
 yatri-frontend-ddcfc4b5f-p4v4d   1/1     Running   0          14s
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get svc yatri-frontend-service
 NAME                     TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
-yatri-frontend-service   ClusterIP   10.107.93.193   <none>        80/TCP    14s
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl apply -f backend.yaml
+yatri-frontend-service   ClusterIP   10.107.93.193   &lt;none&gt;        80/TCP    14s
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl apply -f backend.yaml
 deployment.apps/yatri-backend created
 service/yatri-backend-service created
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl rollout status deployment/yatri-backend --timeout=90s
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl rollout status deployment/yatri-backend --timeout=90s
 deployment "yatri-backend" successfully rolled out
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get pods -l app=yatri-backend
-kubectl get svc yatri-backend-service
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get pods -l app=yatri-backend
 NAME                             READY   STATUS    RESTARTS   AGE
 yatri-backend-6c58cb99c7-db4hk   1/1     Running   0          32s
 yatri-backend-6c58cb99c7-fbfzt   1/1     Running   0          32s
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get svc yatri-backend-service
 NAME                    TYPE        CLUSTER-IP    EXTERNAL-IP   PORT(S)   AGE
-yatri-backend-service   ClusterIP   10.97.215.2   <none>        80/TCP    33s
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl apply -f ingress.yaml
+yatri-backend-service   ClusterIP   10.97.215.2   &lt;none&gt;        80/TCP    33s
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl apply -f ingress.yaml
 ingress.networking.k8s.io/yatri-ingress configured
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get ingress yatri-ingress
-kubectl describe ingress yatri-ingress
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get ingress yatri-ingress
 NAME            CLASS   HOSTS         ADDRESS        PORTS   AGE
 yatri-ingress   nginx   yatri.local   192.168.49.2   80      90m
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl describe ingress yatri-ingress
 Name:             yatri-ingress
 Labels:           app=yatri-app
 Namespace:        default
 Address:          192.168.49.2
 Ingress Class:    nginx
-Default backend:  <default>
+Default backend:  &lt;default&gt;
 Rules:
   Host         Path  Backends
   ----         ----  --------
@@ -237,23 +244,23 @@ Events:
   Normal  Sync    83m (x2 over 84m)    nginx-ingress-controller  Scheduled for sync
   Normal  Sync    59m (x3 over 60m)    nginx-ingress-controller  Scheduled for sync
   Normal  Sync    10s (x4 over 9m58s)  nginx-ingress-controller  Scheduled for sync
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ echo "$(minikube ip) yatri.local" | sudo tee -a /etc/hosts
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ echo "$(minikube ip) yatri.local" | sudo tee -a /etc/hosts
 [sudo: authenticate] Password:          
 sudo: Authentication failed, try again.
 [sudo: authenticate] Password:        
 sudo: Authentication failed, try again.
 [sudo: authenticate] Password: 
 
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ echo "$(minikube ip) yatri.local" | sudo tee -a /etc/hosts
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ echo "$(minikube ip) yatri.local" | sudo tee -a /etc/hosts
 [sudo: authenticate] Password:        
 192.168.49.2 yatri.local
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ cat /etc/hosts | grep yatri.local
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ cat /etc/hosts | grep yatri.local
 192.168.49.2 yatri.local
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ curl http://yatri.local
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ curl http://yatri.local
 ^C
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ getent hosts yatri.local
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ getent hosts yatri.local
 192.168.49.2    yatri.local
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ curl -v --max-time 10 http://yatri.local
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ curl -v --max-time 10 http://yatri.local
 * Host yatri.local:80 was resolved.
 * IPv6: (none)
 * IPv4: 192.168.49.2
@@ -261,18 +268,18 @@ amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-mai
 * Connection timed out after 10002 milliseconds
 * closing connection #0
 curl: (28) Connection timed out after 10002 milliseconds
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get pods -n ingress-nginx -o wide
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get pods -n ingress-nginx -o wide
 NAME                                       READY   STATUS      RESTARTS      AGE   IP           NODE       NOMINATED NODE   READINESS GATES
-ingress-nginx-admission-create-fs676       0/1     Completed   0             95m   <none>       minikube   <none>           <none>
-ingress-nginx-admission-patch-fxld2        0/1     Completed   0             95m   <none>       minikube   <none>           <none>
-ingress-nginx-controller-d7cd8c989-hm9x7   1/1     Running     2 (19m ago)   95m   10.244.0.3   minikube   <none>           <none>
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get svc -n ingress-nginx
+ingress-nginx-admission-create-fs676       0/1     Completed   0             95m   &lt;none&gt;       minikube   &lt;none&gt;           &lt;none&gt;
+ingress-nginx-admission-patch-fxld2        0/1     Completed   0             95m   &lt;none&gt;       minikube   &lt;none&gt;           &lt;none&gt;
+ingress-nginx-controller-d7cd8c989-hm9x7   1/1     Running     2 (19m ago)   95m   10.244.0.3   minikube   &lt;none&gt;           &lt;none&gt;
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get svc -n ingress-nginx
 NAME                                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)                      AGE
-ingress-nginx-controller             NodePort    10.107.181.154   <none>        80:32461/TCP,443:31953/TCP   96m
-ingress-nginx-controller-admission   ClusterIP   10.106.230.169   <none>        443/TCP                      96m
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ minikube ip
+ingress-nginx-controller             NodePort    10.107.181.154   &lt;none&gt;        80:32461/TCP,443:31953/TCP   96m
+ingress-nginx-controller-admission   ClusterIP   10.106.230.169   &lt;none&gt;        443/TCP                      96m
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ minikube ip
 192.168.49.2
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ minikube ssh -- curl -v --max-time 5 -H "Host: yatri.local" http://192.168.49.2
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ minikube ssh -- curl -v --max-time 5 -H "Host: yatri.local" http://192.168.49.2
 * Could not resolve host: yatri.local
 * Closing connection 0
 curl: (6) Could not resolve host: yatri.local
@@ -288,15 +295,15 @@ curl: (6) Could not resolve host: yatri.local
 < Content-Length: 150
 < Connection: close
 < 
-<html>
-<head><title>400 Bad Request</title></head>
-<body>
-<center><h1>400 Bad Request</h1></center>
-<hr><center>nginx</center>
-</body>
-</html>
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;400 Bad Request&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;400 Bad Request&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 * Closing connection 1
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ minikube ssh -- curl -v --max-time 5 -H 'Host: yatri.local' http://192.168.49.2/
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ minikube ssh -- curl -v --max-time 5 -H 'Host: yatri.local' http://192.168.49.2/
 * Could not resolve host: yatri.local
 * Closing connection 0
 curl: (6) Could not resolve host: yatri.local
@@ -312,15 +319,15 @@ curl: (6) Could not resolve host: yatri.local
 < Content-Length: 150
 < Connection: close
 < 
-<html>
-<head><title>400 Bad Request</title></head>
-<body>
-<center><h1>400 Bad Request</h1></center>
-<hr><center>nginx</center>
-</body>
-</html>
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;400 Bad Request&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;400 Bad Request&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 * Closing connection 1
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ minikube ssh -- curl -v --max-time 5 -H 'Host: yatri.local' http://192.168.49.2/api/
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ minikube ssh -- curl -v --max-time 5 -H 'Host: yatri.local' http://192.168.49.2/api/
 * Could not resolve host: yatri.local
 * Closing connection 0
 curl: (6) Could not resolve host: yatri.local
@@ -336,15 +343,15 @@ curl: (6) Could not resolve host: yatri.local
 < Content-Length: 150
 < Connection: close
 < 
-<html>
-<head><title>400 Bad Request</title></head>
-<body>
-<center><h1>400 Bad Request</h1></center>
-<hr><center>nginx</center>
-</body>
-</html>
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;400 Bad Request&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;400 Bad Request&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 * Closing connection 1
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get ingress yatri-ingress -o yaml
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get ingress yatri-ingress -o yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -386,7 +393,7 @@ status:
   loadBalancer:
     ingress:
     - ip: 192.168.49.2
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl logs -n ingress-nginx deployment/ingress-nginx-controller --tail=50
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl logs -n ingress-nginx deployment/ingress-nginx-controller --tail=50
 I0917 11:41:19.180659       7 nginx.go:273] "Starting NGINX Ingress controller"
 I0917 11:41:19.184077       7 event.go:377] Event(v1.ObjectReference{Kind:"ConfigMap", Namespace:"ingress-nginx", Name:"udp-services", UID:"abc42e4c-45ee-4716-9ad5-58c1210bfced", APIVersion:"v1", ResourceVersion:"5123", FieldPath:""}): type: 'Normal' reason: 'CREATE' ConfigMap ingress-nginx/udp-services
 I0917 11:41:19.184165       7 event.go:377] Event(v1.ObjectReference{Kind:"ConfigMap", Namespace:"ingress-nginx", Name:"ingress-nginx-controller", UID:"ce6226df-1cb3-4110-9ee2-3751b92e3844", APIVersion:"v1", ResourceVersion:"5121", FieldPath:""}): type: 'Normal' reason: 'CREATE' ConfigMap ingress-nginx/ingress-nginx-controller
@@ -437,33 +444,33 @@ I0917 11:51:08.146553       7 event.go:377] Event(v1.ObjectReference{Kind:"Pod",
 192.168.49.2 - - [17/Sep/2026:12:01:16 +0000] "GET / HTTP/1.1" 400 150 "-" "curl/7.88.1" 56 0.000 [] [] - - - - d80e3ff5d5315c04615eff891aa5c6f1
 192.168.49.2 - - [17/Sep/2026:12:02:17 +0000] "GET / HTTP/1.1" 400 150 "-" "curl/7.88.1" 56 0.000 [] [] - - - - 584bbc4022e7032059ed114b045d3881
 192.168.49.2 - - [17/Sep/2026:12:02:40 +0000] "GET /api/ HTTP/1.1" 400 150 "-" "curl/7.88.1" 60 0.000 [] [] - - - - 80c64cc16430a154742b90a0c5f20cd9
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get ingressclass
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get ingressclass
 NAME              CONTROLLER             PARAMETERS   AGE
-nginx (default)   k8s.io/ingress-nginx   <none>       99m
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get svc yatri-frontend-service yatri-backend-service
+nginx (default)   k8s.io/ingress-nginx   &lt;none&gt;       99m
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get svc yatri-frontend-service yatri-backend-service
 NAME                     TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
-yatri-frontend-service   ClusterIP   10.107.93.193   <none>        80/TCP    14m
-yatri-backend-service    ClusterIP   10.97.215.2     <none>        80/TCP    14m
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ curl -v --max-time 10 -H "Host: yatri.local" http://192.168.49.2/
+yatri-frontend-service   ClusterIP   10.107.93.193   &lt;none&gt;        80/TCP    14m
+yatri-backend-service    ClusterIP   10.97.215.2     &lt;none&gt;        80/TCP    14m
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ curl -v --max-time 10 -H "Host: yatri.local" http://192.168.49.2/
 *   Trying 192.168.49.2:80...
 * Connection timed out after 10002 milliseconds
 * closing connection #0
 curl: (28) Connection timed out after 10002 milliseconds
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get pods -o wide
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get pods -o wide
 NAME                             READY   STATUS    RESTARTS   AGE   IP           NODE       NOMINATED NODE   READINESS GATES
-yatri-backend-6c58cb99c7-db4hk   1/1     Running   0          15m   10.244.0.6   minikube   <none>           <none>
-yatri-backend-6c58cb99c7-fbfzt   1/1     Running   0          15m   10.244.0.7   minikube   <none>           <none>
-yatri-frontend-ddcfc4b5f-j7czj   1/1     Running   0          15m   10.244.0.5   minikube   <none>           <none>
-yatri-frontend-ddcfc4b5f-p4v4d   1/1     Running   0          15m   10.244.0.4   minikube   <none>           <none>
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get endpoints yatri-frontend-service yatri-backend-service
+yatri-backend-6c58cb99c7-db4hk   1/1     Running   0          15m   10.244.0.6   minikube   &lt;none&gt;           &lt;none&gt;
+yatri-backend-6c58cb99c7-fbfzt   1/1     Running   0          15m   10.244.0.7   minikube   &lt;none&gt;           &lt;none&gt;
+yatri-frontend-ddcfc4b5f-j7czj   1/1     Running   0          15m   10.244.0.5   minikube   &lt;none&gt;           &lt;none&gt;
+yatri-frontend-ddcfc4b5f-p4v4d   1/1     Running   0          15m   10.244.0.4   minikube   &lt;none&gt;           &lt;none&gt;
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get endpoints yatri-frontend-service yatri-backend-service
 Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
 NAME                     ENDPOINTS                         AGE
 yatri-frontend-service   10.244.0.4:80,10.244.0.5:80       15m
 yatri-backend-service    10.244.0.6:5000,10.244.0.7:5000   15m
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl run test-curl --rm -it --image=curlimages/curl -- sh
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl run test-curl --rm -it --image=curlimages/curl -- sh
 All commands and output from this session will be recorded in container logs, including credentials and sensitive information passed through the command prompt.
 If you don't see a command prompt, try pressing enter.
-~ $ curl -v http://yatri-frontend-service
+<span style="color: #38bdf8; font-weight: bold;">~ $</span> curl -v http://yatri-frontend-service
 * Host yatri-frontend-service:80 was resolved.
 * IPv6: (none)
 * IPv4: 10.107.93.193
@@ -486,31 +493,31 @@ If you don't see a command prompt, try pressing enter.
 < ETag: "661e9d7a-267"
 < Accept-Ranges: bytes
 < 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
-<style>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+&lt;style&gt;
 html { color-scheme: light dark; }
 body { width: 35em; margin: 0 auto;
 font-family: Tahoma, Verdana, Arial, sans-serif; }
-</style>
-</head>
-<body>
-<h1>Welcome to nginx!</h1>
-<p>If you see this page, the nginx web server is successfully installed and
-working. Further configuration is required.</p>
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;/p&gt;
 
-<p>For online documentation and support please refer to
-<a href="http://nginx.org/">nginx.org</a>.<br/>
+&lt;p&gt;For online documentation and support please refer to
+&lt;a href="http://nginx.org/"&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
 Commercial support is available at
-<a href="http://nginx.com/">nginx.com</a>.</p>
+&lt;a href="http://nginx.com/"&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
 
-<p><em>Thank you for using nginx.</em></p>
-</body>
-</html>
+&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 * Connection #0 to host yatri-frontend-service:80 left intact
-~ $ curl -v http://yatri-backend-service
+<span style="color: #38bdf8; font-weight: bold;">~ $</span> curl -v http://yatri-backend-service
 * Host yatri-backend-service:80 was resolved.
 * IPv6: (none)
 * IPv4: 10.97.215.2
@@ -538,56 +545,56 @@ DEFAULT_CURRENCY: INR
 POSTGRES_USER   : yatri_admin
 POSTGRES_DB     : yatri_production_db
 * shutting down connection #0
-~ $ exit
+<span style="color: #38bdf8; font-weight: bold;">~ $</span> exit
 Session ended, resume using 'kubectl attach test-curl -c test-curl -i -t' command when the pod is running
 pod "test-curl" deleted from default namespace
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ curl -v --max-time 10 -H "Host: yatri.local" http://192.168.49.2/
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ curl -v --max-time 10 -H "Host: yatri.local" http://192.168.49.2/
 *   Trying 192.168.49.2:80...
 * Connection timed out after 10002 milliseconds
 * closing connection #0
 curl: (28) Connection timed out after 10002 milliseconds
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ bash cleanup.sh
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ bash cleanup.sh
 : invalid option nameet: pipefail
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get pods
-kubectl get svc
-kubectl get ingress
-kubectl get configmap
-kubectl get secret
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get pods
 NAME                             READY   STATUS    RESTARTS   AGE
 yatri-backend-6c58cb99c7-db4hk   1/1     Running   0          20m
 yatri-backend-6c58cb99c7-fbfzt   1/1     Running   0          20m
 yatri-frontend-ddcfc4b5f-j7czj   1/1     Running   0          20m
 yatri-frontend-ddcfc4b5f-p4v4d   1/1     Running   0          20m
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get svc
 NAME                     TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
-kubernetes               ClusterIP   10.96.0.1       <none>        443/TCP   3h5m
-yatri-backend-service    ClusterIP   10.97.215.2     <none>        80/TCP    20m
-yatri-frontend-service   ClusterIP   10.107.93.193   <none>        80/TCP    20m
+kubernetes               ClusterIP   10.96.0.1       &lt;none&gt;        443/TCP   3h5m
+yatri-backend-service    ClusterIP   10.97.215.2     &lt;none&gt;        80/TCP    20m
+yatri-frontend-service   ClusterIP   10.107.93.193   &lt;none&gt;        80/TCP    20m
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get ingress
 NAME            CLASS   HOSTS         ADDRESS        PORTS   AGE
 yatri-ingress   nginx   yatri.local   192.168.49.2   80      109m
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get configmap
 NAME               DATA   AGE
 kube-root-ca.crt   1      3h5m
 yatri-app-config   5      123m
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get secret
 NAME              TYPE     DATA   AGE
 yatri-db-secret   Opaque   3      121m
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get pods | grep yatri
-kubectl get svc | grep yatri
-kubectl get ingress | grep yatri
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get pods | grep yatri
 yatri-backend-6c58cb99c7-db4hk   1/1     Running   0          20m
 yatri-backend-6c58cb99c7-fbfzt   1/1     Running   0          20m
 yatri-frontend-ddcfc4b5f-j7czj   1/1     Running   0          21m
 yatri-frontend-ddcfc4b5f-p4v4d   1/1     Running   0          21m
-yatri-backend-service    ClusterIP   10.97.215.2     <none>        80/TCP    20m
-yatri-frontend-service   ClusterIP   10.107.93.193   <none>        80/TCP    21m
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get svc | grep yatri
+yatri-backend-service    ClusterIP   10.97.215.2     &lt;none&gt;        80/TCP    20m
+yatri-frontend-service   ClusterIP   10.107.93.193   &lt;none&gt;        80/TCP    21m
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get ingress | grep yatri
 yatri-ingress   nginx   yatri.local   192.168.49.2   80      109m
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ sed -i 's/\r$//' cleanup.sh
-sed -i 's/\r$//' run-demo.sh
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ head -5 cleanup.sh
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ sed -i 's/\r$//' cleanup.sh
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ sed -i 's/\r$//' run-demo.sh
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ head -5 cleanup.sh
 #!/usr/bin/env bash
 # cleanup.sh — Tear down all demo resources for Session 12
 set -euo pipefail
 
 DEMO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ bash cleanup.sh
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ bash cleanup.sh
 [INFO] Deleting Ingress...
 ingress.networking.k8s.io "yatri-ingress" deleted from default namespace
 [INFO] Deleting Backend Deployment and Service...
@@ -601,16 +608,16 @@ secret "yatri-db-secret" deleted from default namespace
 [INFO] Deleting ConfigMap...
 configmap "yatri-app-config" deleted from default namespace
 [INFO] All demo resources removed.
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get pods | grep yatri
-kubectl get svc | grep yatri
-kubectl get ingress | grep yatri
-kubectl get configmap | grep yatri
-kubectl get secret | grep yatri
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get pods | grep yatri
 yatri-backend-6c58cb99c7-db4hk   1/1     Terminating   0          25m
 yatri-backend-6c58cb99c7-fbfzt   1/1     Terminating   0          25m
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get svc | grep yatri
 No resources found in default namespace.
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get ingress | grep yatri
 No resources found in default namespace.
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ bash run-demo.sh
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get configmap | grep yatri
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get secret | grep yatri
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ bash run-demo.sh
 [INFO] Step 1: Enabling NGINX Ingress Controller on Minikube...
 💡  ingress is an addon maintained by Kubernetes. For any concerns contact minikube on GitHub.
 You can view the list of minikube maintainers at: https://github.com/kubernetes/minikube/blob/master/OWNERS
@@ -662,8 +669,8 @@ NAME                             READY   STATUS    RESTARTS   AGE
 yatri-backend-6c58cb99c7-6dldg   1/1     Running   0          2s
 yatri-backend-6c58cb99c7-gjlv9   1/1     Running   0          2s
 NAME                     TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
-yatri-frontend-service   ClusterIP   10.108.167.179   <none>        80/TCP    2s
-yatri-backend-service    ClusterIP   10.98.12.236     <none>        80/TCP    2s
+yatri-frontend-service   ClusterIP   10.108.167.179   &lt;none&gt;        80/TCP    2s
+yatri-backend-service    ClusterIP   10.98.12.236     &lt;none&gt;        80/TCP    2s
 NAME            CLASS   HOSTS         ADDRESS   PORTS   AGE
 yatri-ingress   nginx   yatri.local             80      1s
 
@@ -687,16 +694,17 @@ yatri-ingress   nginx   yatri.local             80      1s
   Decode Secret password:
     kubectl get secret yatri-db-secret -o jsonpath='{.data.POSTGRES_PASSWORD}' | base64 --decode
 [INFO] ============================================================
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get ingress yatri-ingress
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get ingress yatri-ingress
 NAME            CLASS   HOSTS         ADDRESS        PORTS   AGE
 yatri-ingress   nginx   yatri.local   192.168.49.2   80      96s
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get ingress yatri-ingress -w
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get ingress yatri-ingress -w
 NAME            CLASS   HOSTS         ADDRESS        PORTS   AGE
 yatri-ingress   nginx   yatri.local   192.168.49.2   80      109s
-^Camitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demokubectl run ingress-test --rm -it --image=curlimages/curl -- shsh
+^C
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl run ingress-test --rm -it --image=curlimages/curl -- sh
 All commands and output from this session will be recorded in container logs, including credentials and sensitive information passed through the command prompt.
 If you don't see a command prompt, try pressing enter.
-~ $ curl -v -H 'Host: yatri.local' http://192.168.49.2/
+<span style="color: #38bdf8; font-weight: bold;">~ $</span> curl -v -H 'Host: yatri.local' http://192.168.49.2/
 *   Trying 192.168.49.2:80...
 * Established connection to 192.168.49.2 (192.168.49.2 port 80) from 10.244.0.13 port 55298 
 * using HTTP/1.x
@@ -715,31 +723,31 @@ If you don't see a command prompt, try pressing enter.
 < ETag: "661e9d7a-267"
 < Accept-Ranges: bytes
 < 
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
-<style>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+&lt;style&gt;
 html { color-scheme: light dark; }
 body { width: 35em; margin: 0 auto;
 font-family: Tahoma, Verdana, Arial, sans-serif; }
-</style>
-</head>
-<body>
-<h1>Welcome to nginx!</h1>
-<p>If you see this page, the nginx web server is successfully installed and
-working. Further configuration is required.</p>
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;/p&gt;
 
-<p>For online documentation and support please refer to
-<a href="http://nginx.org/">nginx.org</a>.<br/>
+&lt;p&gt;For online documentation and support please refer to
+&lt;a href="http://nginx.org/"&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
 Commercial support is available at
-<a href="http://nginx.com/">nginx.com</a>.</p>
+&lt;a href="http://nginx.com/"&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
 
-<p><em>Thank you for using nginx.</em></p>
-</body>
-</html>
+&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 * Connection #0 to host 192.168.49.2:80 left intact
-~ $ curl -v -H 'Host: yatri.local' http://192.168.49.2/api/
+<span style="color: #38bdf8; font-weight: bold;">~ $</span> curl -v -H 'Host: yatri.local' http://192.168.49.2/api/
 *   Trying 192.168.49.2:80...
 * Established connection to 192.168.49.2 (192.168.49.2 port 80) from 10.244.0.13 port 44550 
 * using HTTP/1.x
@@ -763,34 +771,34 @@ DEFAULT_CURRENCY: INR
 POSTGRES_USER   : yatri_admin
 POSTGRES_DB     : yatri_production_db
 * Connection #0 to host 192.168.49.2:80 left intact
-~ $ exit
+<span style="color: #38bdf8; font-weight: bold;">~ $</span> exit
 Session ended, resume using 'kubectl attach ingress-test -c ingress-test -i -t' command when the pod is running
 pod "ingress-test" deleted from default namespace
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ curl -H "Host: yatri.local" http://127.0.0.1:8080/
-<!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
-<style>
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ curl -H "Host: yatri.local" http://127.0.0.1:8080/
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+&lt;style&gt;
 html { color-scheme: light dark; }
 body { width: 35em; margin: 0 auto;
 font-family: Tahoma, Verdana, Arial, sans-serif; }
-</style>
-</head>
-<body>
-<h1>Welcome to nginx!</h1>
-<p>If you see this page, the nginx web server is successfully installed and
-working. Further configuration is required.</p>
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;/p&gt;
 
-<p>For online documentation and support please refer to
-<a href="http://nginx.org/">nginx.org</a>.<br/>
+&lt;p&gt;For online documentation and support please refer to
+&lt;a href="http://nginx.org/"&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
 Commercial support is available at
-<a href="http://nginx.com/">nginx.com</a>.</p>
+&lt;a href="http://nginx.com/"&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
 
-<p><em>Thank you for using nginx.</em></p>
-</body>
-</html>
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ curl -H "Host: yatri.local" http://127.0.0.1:8080/api/
+&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ curl -H "Host: yatri.local" http://127.0.0.1:8080/api/
 Yatri Backend API
 =================
 ENVIRONMENT     : production
@@ -798,37 +806,38 @@ LOG_LEVEL       : INFO
 DEFAULT_CURRENCY: INR
 POSTGRES_USER   : yatri_admin
 POSTGRES_DB     : yatri_production_db
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get pods
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get pods
 NAME                             READY   STATUS    RESTARTS   AGE
 yatri-backend-6c58cb99c7-6dldg   1/1     Running   0          6m30s
 yatri-backend-6c58cb99c7-gjlv9   1/1     Running   0          6m30s
 yatri-frontend-ddcfc4b5f-p6cwz   1/1     Running   0          6m30s
 yatri-frontend-ddcfc4b5f-vmvwr   1/1     Running   0          6m30s
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get svc
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get svc
 NAME                     TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
-kubernetes               ClusterIP   10.96.0.1        <none>        443/TCP   3h19m
-yatri-backend-service    ClusterIP   10.98.12.236     <none>        80/TCP    6m39s
-yatri-frontend-service   ClusterIP   10.108.167.179   <none>        80/TCP    6m39s
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get ingress
+kubernetes               ClusterIP   10.96.0.1        &lt;none&gt;        443/TCP   3h19m
+yatri-backend-service    ClusterIP   10.98.12.236     &lt;none&gt;        80/TCP    6m39s
+yatri-frontend-service   ClusterIP   10.108.167.179   &lt;none&gt;        80/TCP    6m39s
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get ingress
 NAME            CLASS   HOSTS         ADDRESS        PORTS   AGE
 yatri-ingress   nginx   yatri.local   192.168.49.2   80      6m46s
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get ingress yatri-ingress -o wide
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get ingress yatri-ingress -o wide
 NAME            CLASS   HOSTS         ADDRESS        PORTS   AGE
 yatri-ingress   nginx   yatri.local   192.168.49.2   80      6m53s
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl exec -it deploy/yatri-backend -- env | grep -E 'ENVIRONMENT|LOG_LEVEL|POSTGRES'
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl exec -it deploy/yatri-backend -- env | grep -E 'ENVIRONMENT|LOG_LEVEL|POSTGRES'
 POSTGRES_USER=yatri_admin
 POSTGRES_PASSWORD=secretpassword
 POSTGRES_DB=yatri_production_db
 ENVIRONMENT=production
 LOG_LEVEL=INFO
-amitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo$ kubectl get secret yatri-db-secret -o jsonpath='{.data.POSTGRES_PASSWORD}' | base64 --decode
-secretpasswordamitabh@LAPTOP-3KF17VR3:/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/kubectl describe ingress yatri-ingress yatri-ingress
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl get secret yatri-db-secret -o jsonpath='{.data.POSTGRES_PASSWORD}' | base64 --decode
+secretpassword
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/04-full-demo</span>$ kubectl describe ingress yatri-ingress
 Name:             yatri-ingress
 Labels:           app=yatri-app
 Namespace:        default
 Address:          192.168.49.2
 Ingress Class:    nginx
-Default backend:  <default>
+Default backend:  &lt;default&gt;
 Rules:
   Host         Path  Backends
   ----         ----  --------
@@ -842,3 +851,4 @@ Events:
   Type    Reason  Age                   From                      Message
   ----    ------  ----                  ----                      -------
   Normal  Sync    7m2s (x2 over 7m54s)  nginx-ingress-controller  Scheduled for sync
+</code></pre>
