@@ -852,3 +852,420 @@ Events:
   ----    ------  ----                  ----                      -------
   Normal  Sync    7m2s (x2 over 7m54s)  nginx-ingress-controller  Scheduled for sync
 </code></pre>
+
+---
+
+# <span style="font-size: 32px; font-weight: 800; color: #2563eb;">Ingress-03:</span>
+
+<pre style="background-color: #1e1e2e; color: #cdd6f4; padding: 16px; border-radius: 8px; font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; line-height: 1.45; overflow-x: auto; border: 1px solid #313244;"><code><span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets</span>$ ls
+01-configmap  02-secret  03-ingress  04-full-demo  Submission.md  lab.md  research.md  troubleshooting
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets</span>$ cd 03-ingress
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl apply -f ingress/ingress-routes.yaml
+error: the path "ingress/ingress-routes.yaml" does not exist
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl apply -f ingress-routes.yaml
+ingress.networking.k8s.io/yatri-ingress configured
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl get ingress yatri-ingress
+NAME            CLASS   HOSTS         ADDRESS        PORTS   AGE
+yatri-ingress   nginx   yatri.local   192.168.49.2   80      2d6h
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl describe ingress yatri-ingress
+Name:             yatri-ingress
+Labels:           app=yatri-app
+Namespace:        default
+Address:          192.168.49.2
+Ingress Class:    nginx
+Default backend:  &lt;default&gt;
+Rules:
+  Host         Path  Backends
+  ----         ----  --------
+  yatri.local
+               /api(/|$)(.*)   yatri-backend-service:80 ()
+               /               yatri-frontend-service:80 ()
+Annotations:   nginx.ingress.kubernetes.io/ssl-redirect: false
+               nginx.ingress.kubernetes.io/use-regex: true
+Events:
+  Type    Reason  Age                From                      Message
+  ----    ------  ----               ----                      -------
+  Normal  Sync    12h (x3 over 12h)  nginx-ingress-controller  Scheduled for sync
+  Normal  Sync    14s (x4 over 28m)  nginx-ingress-controller  Scheduled for sync
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ ls
+README.md  ingress-routes.yaml  ingress-tls.yaml  path-based.yml
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+  -keyout tls.key \
+  -out tls.crt \
+  -subj "/CN=campus.local/O=CampusDevOps"
+..............+...+..........+++++++++++++++++++++++++++++++++++++++*.+...+..+............+...+...+.........+...+...+.........+.+........+.........+++++++++++++++++++++++++++++++++++++++*.....+.....+....+...+........+.......+..+.......+.....+...+............+................+..+.+..+.......+..+.........+............+...+.+......+..+.......+......+..+..........+..+...+...+....+.....+.............+..+.+............+..+...+......+....+...+........+......+...+.+...........+.+..+.+......+..................+...........+....+........+.......+........+....+......+............+...........+......+.+...+..+............+......+.......+..............+...+.++++++
+....+........+...+.......+.....+.........+...+.+......+...+..+......+....+++++++++++++++++++++++++++++++++++++++*.........+.............+.........+.........+++++++++++++++++++++++++++++++++++++++*.....+.......+...+...+.....+...+......+....+...........+..........+..............+.+...+...+.....+...+....+...........................+...+.....+......+......+.+........+......++++++
+-----
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ ls tls.*
+tls.crt  tls.key
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl create secret tls campus-tls-cert \
+  --cert=tls.crt \
+  --key=tls.key
+secret/campus-tls-cert created
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl get secret campus-tls-cert
+NAME              TYPE                DATA   AGE
+campus-tls-cert   kubernetes.io/tls   2      94s
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl apply -f ingress-tls.yaml
+ingress.networking.k8s.io/campus-ingress-tls created
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl get ingress campus-ingress-tls
+NAME                 CLASS   HOSTS                                  ADDRESS   PORTS     AGE
+campus-ingress-tls   nginx   portal.campus.local,api.campus.local             80, 443   16s
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ INGRESS_IP=$(kubectl get ingress campus-ingress-tls -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ echo $INGRESS_IP
+192.168.49.2
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ curl -k --resolve portal.campus.local:443:$INGRESS_IP https://portal.campus.local/
+^C
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ echo $INGRESS_IP
+192.168.49.2
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl run ingress-test --rm -it --image=curlimages/curl -- sh
+All commands and output from this session will be recorded in container logs, including credentials and sensitive information passed through the command prompt.
+If you don't see a command prompt, try pressing enter.
+<span style="color: #4ade80; font-weight: bold;">~</span> $ curl -vk --resolve portal.campus.local:443:192.168.49.2 https://portal.campus.local/
+* [DNS] added portal.campus.local:443:192.168.49.2 to cache
+* Hostname portal.campus.local was found in DNS cache
+* Host portal.campus.local:443 was resolved.
+* IPv6: (none)
+* IPv4: 192.168.49.2
+*   Trying 192.168.49.2:443...
+* ALPN: curl offers h2,http/1.1
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* SSL Trust: peer verification disabled
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519MLKEM768 / RSASSA-PSS
+* ALPN: server accepted h2
+* Server certificate:
+*   subject: O=Acme Co; CN=Kubernetes Ingress Controller Fake Certificate
+*   start date: Sep 19 18:22:03 2026 GMT
+*   expire date: Sep 19 18:22:03 2027 GMT
+*   issuer: O=Acme Co; CN=Kubernetes Ingress Controller Fake Certificate
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+* OpenSSL verify result: 12
+*  SSL certificate verification failed, continuing anyway!
+* Established connection to portal.campus.local (192.168.49.2 port 443) from 10.244.0.8 port 56278    
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://portal.campus.local/
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: portal.campus.local]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: curl/8.22.0]
+* [HTTP/2] [1] [accept: */*]
+&gt; GET / HTTP/2
+&gt; Host: portal.campus.local
+&gt; User-Agent: curl/8.22.0
+&gt; Accept: */*
+&gt;
+* Request completely sent off
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+&lt; HTTP/2 503
+&lt; date: Sat, 19 Sep 2026 18:58:14 GMT
+&lt; content-type: text/html
+&lt; content-length: 190
+&lt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;503 Service Temporarily Unavailable&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;503 Service Temporarily Unavailable&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+* Connection #0 to host portal.campus.local:443 left intact
+<span style="color: #4ade80; font-weight: bold;">~</span> $ curl -vk --resolve api.campus.local:443:192.168.49.2 https://api.campus.local/api/health
+* [DNS] added api.campus.local:443:192.168.49.2 to cache
+* Hostname api.campus.local was found in DNS cache
+* Host api.campus.local:443 was resolved.
+* IPv6: (none)
+* IPv4: 192.168.49.2
+*   Trying 192.168.49.2:443...
+* ALPN: curl offers h2,http/1.1
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* SSL Trust: peer verification disabled
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519MLKEM768 / RSASSA-PSS
+* ALPN: server accepted h2
+* Server certificate:
+*   subject: O=Acme Co; CN=Kubernetes Ingress Controller Fake Certificate
+*   start date: Sep 19 18:22:03 2026 GMT
+*   expire date: Sep 19 18:22:03 2027 GMT
+*   issuer: O=Acme Co; CN=Kubernetes Ingress Controller Fake Certificate
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+* OpenSSL verify result: 12
+*  SSL certificate verification failed, continuing anyway!
+* Established connection to api.campus.local (192.168.49.2 port 443) from 10.244.0.8 port 51414       
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://api.campus.local/api/health
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: api.campus.local]
+* [HTTP/2] [1] [:path: /api/health]
+* [HTTP/2] [1] [user-agent: curl/8.22.0]
+* [HTTP/2] [1] [accept: */*]
+&gt; GET /api/health HTTP/2
+&gt; Host: api.campus.local
+&gt; User-Agent: curl/8.22.0
+&gt; Accept: */*
+&gt;
+* Request completely sent off
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+&lt; HTTP/2 503
+&lt; date: Sat, 19 Sep 2026 18:58:36 GMT
+&lt; content-type: text/html
+&lt; content-length: 190
+&lt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;503 Service Temporarily Unavailable&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;503 Service Temporarily Unavailable&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+* Connection #0 to host api.campus.local:443 left intact
+<span style="color: #4ade80; font-weight: bold;">~</span> $ exit
+Session ended, resume using 'kubectl attach ingress-test -c ingress-test -n default -i -t' command
+pod "ingress-test" deleted from default namespace
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ cat ingress-tls.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: campus-ingress-tls
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - portal.campus.local
+        - api.campus.local
+      secretName: campus-tls-cert
+  rules:
+    # Host 1: Frontend Student Portal (Host-based routing)
+    - host: portal.campus.local
+      http:
+        paths:
+          - path: /()(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: yatri-frontend-service
+                port:
+                  number: 80
+
+    # Host 2: Backend REST API (Host-based routing + Path-based routing)
+    - host: api.campus.local
+      http:
+        paths:
+          - path: /api(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: yatri-backend-service
+                port:
+                  number: 80
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl get svc yatri-frontend-service yatri-backend-service
+NAME                     TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)   AGE
+yatri-frontend-service   ClusterIP   10.108.167.179   &lt;none&gt;        80/TCP    2d6h
+yatri-backend-service    ClusterIP   10.98.12.236     &lt;none&gt;        80/TCP    2d6h
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl get endpoints yatri-frontend-service yatri-backend-service
+Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
+NAME                     ENDPOINTS   AGE
+yatri-frontend-service   &lt;none&gt;      2d6h
+yatri-backend-service    &lt;none&gt;      2d6h
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl describe ingress campus-ingress-tls
+Name:             campus-ingress-tls
+Labels:           &lt;none&gt;
+Namespace:        default
+Address:          192.168.49.2
+Ingress Class:    nginx
+Default backend:  &lt;default&gt;
+TLS:
+  campus-tls-cert terminates portal.campus.local,api.campus.local
+Rules:
+  Host                 Path  Backends
+  ----                 ----  --------
+  portal.campus.local
+                       /()(.*)   yatri-frontend-service:80 ()
+  api.campus.local
+                       /api(/|$)(.*)   yatri-backend-service:80 ()
+Annotations:           nginx.ingress.kubernetes.io/rewrite-target: /$2
+                       nginx.ingress.kubernetes.io/ssl-redirect: true
+Events:
+  Type    Reason  Age                    From                      Message
+  ----    ------  ----                   ----                      -------
+  Normal  Sync    5m55s (x2 over 6m27s)  nginx-ingress-controller  Scheduled for sync
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl apply -f ../04-full-demo/frontend.yaml
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl apply -f ../04-full-demo/backend.yaml
+deployment.apps/yatri-frontend created
+service/yatri-frontend-service unchanged
+deployment.apps/yatri-backend created
+service/yatri-backend-service unchanged
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl get pods
+NAME                             READY   STATUS    RESTARTS   AGE
+yatri-backend-6c58cb99c7-4zbc7   1/1     Running   0          13s
+yatri-backend-6c58cb99c7-lbhkm   1/1     Running   0          13s
+yatri-frontend-ddcfc4b5f-5rtsp   1/1     Running   0          13s
+yatri-frontend-ddcfc4b5f-fgdjf   1/1     Running   0          13s
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl get endpoints yatri-frontend-service yatri-backend-service
+Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
+NAME                     ENDPOINTS                           AGE
+yatri-frontend-service   10.244.0.10:80,10.244.0.9:80        2d6h
+yatri-backend-service    10.244.0.11:5000,10.244.0.12:5000   2d6h
+<span style="color: #4ade80; font-weight: bold;">amitabh@LAPTOP-3KF17VR3</span>:<span style="color: #60a5fa;">/mnt/c/Users/USER/Downloads/devops-heros-branch10104-main/devops-heros-branch10104-main/session-12-ingress-configmaps-secrets/03-ingress</span>$ kubectl run ingress-test --rm -it --image=curlimages/curl -- sh
+All commands and output from this session will be recorded in container logs, including credentials and sensitive information passed through the command prompt.
+If you don't see a command prompt, try pressing enter.
+<span style="color: #4ade80; font-weight: bold;">~</span> $ curl -vk --resolve portal.campus.local:443:192.168.49.2 https://portal.campus.local/
+* [DNS] added portal.campus.local:443:192.168.49.2 to cache
+* Hostname portal.campus.local was found in DNS cache
+* Host portal.campus.local:443 was resolved.
+* IPv6: (none)
+* IPv4: 192.168.49.2
+*   Trying 192.168.49.2:443...
+* ALPN: curl offers h2,http/1.1
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* SSL Trust: peer verification disabled
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519MLKEM768 / RSASSA-PSS
+* ALPN: server accepted h2
+* Server certificate:
+*   subject: O=Acme Co; CN=Kubernetes Ingress Controller Fake Certificate
+*   start date: Sep 19 18:22:03 2026 GMT
+*   expire date: Sep 19 18:22:03 2027 GMT
+*   issuer: O=Acme Co; CN=Kubernetes Ingress Controller Fake Certificate
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+* OpenSSL verify result: 12
+*  SSL certificate verification failed, continuing anyway!
+* Established connection to portal.campus.local (192.168.49.2 port 443) from 10.244.0.13 port 53818   
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://portal.campus.local/
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: portal.campus.local]
+* [HTTP/2] [1] [:path: /]
+* [HTTP/2] [1] [user-agent: curl/8.22.0]
+* [HTTP/2] [1] [accept: */*]
+&gt; GET / HTTP/2
+&gt; Host: portal.campus.local
+&gt; User-Agent: curl/8.22.0
+&gt; Accept: */*
+&gt;
+* Request completely sent off
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+&lt; HTTP/2 200
+&lt; date: Sat, 19 Sep 2026 19:08:09 GMT
+&lt; content-type: text/html
+&lt; content-length: 615
+&lt; last-modified: Tue, 16 Apr 2024 15:47:06 GMT
+&lt; etag: "661e9d7a-267"
+&lt; accept-ranges: bytes
+&lt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Welcome to nginx!&lt;/title&gt;
+&lt;style&gt;
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;
+&lt;p&gt;If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.&lt;/p&gt;
+
+&lt;p&gt;For online documentation and support please refer to
+&lt;a href="http://nginx.org/"&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;
+Commercial support is available at
+&lt;a href="http://nginx.com/"&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+* Connection #0 to host portal.campus.local:443 left intact
+<span style="color: #4ade80; font-weight: bold;">~</span> $ curl -vk --resolve api.campus.local:443:192.168.49.2 https://api.campus.local/api/health
+* [DNS] added api.campus.local:443:192.168.49.2 to cache
+* Hostname api.campus.local was found in DNS cache
+* Host api.campus.local:443 was resolved.
+* IPv6: (none)
+* IPv4: 192.168.49.2
+*   Trying 192.168.49.2:443...
+* ALPN: curl offers h2,http/1.1
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* SSL Trust: peer verification disabled
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384 / X25519MLKEM768 / RSASSA-PSS
+* ALPN: server accepted h2
+* Server certificate:
+*   subject: O=Acme Co; CN=Kubernetes Ingress Controller Fake Certificate
+*   start date: Sep 19 18:22:03 2026 GMT
+*   expire date: Sep 19 18:22:03 2027 GMT
+*   issuer: O=Acme Co; CN=Kubernetes Ingress Controller Fake Certificate
+*   Certificate level 0: Public key type RSA (2048/112 Bits/secBits), signed using sha256WithRSAEncryption
+* OpenSSL verify result: 12
+*  SSL certificate verification failed, continuing anyway!
+* Established connection to api.campus.local (192.168.49.2 port 443) from 10.244.0.13 port 55144      
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://api.campus.local/api/health
+* [HTTP/2] [1] [:method: GET]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: api.campus.local]
+* [HTTP/2] [1] [:path: /api/health]
+* [HTTP/2] [1] [user-agent: curl/8.22.0]
+* [HTTP/2] [1] [accept: */*]
+&gt; GET /api/health HTTP/2
+&gt; Host: api.campus.local
+&gt; User-Agent: curl/8.22.0
+&gt; Accept: */*
+&gt;
+* Request completely sent off
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+&lt; HTTP/2 200
+&lt; date: Sat, 19 Sep 2026 19:08:23 GMT
+&lt; content-type: text/plain
+&lt; content-length: 178
+&lt;
+Yatri Backend API
+=================
+ENVIRONMENT     : production
+LOG_LEVEL       : INFO
+DEFAULT_CURRENCY: INR
+POSTGRES_USER   : yatri_admin
+POSTGRES_DB     : yatri_production_db
+* Connection #0 to host api.campus.local:443 left intact
+<span style="color: #4ade80; font-weight: bold;">~</span> $ exit
+Session ended, resume using 'kubectl attach ingress-test -c ingress-test -n default -i -t' command
+pod "ingress-test" deleted from default namespace
+</code></pre>
