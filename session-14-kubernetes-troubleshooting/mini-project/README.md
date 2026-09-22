@@ -171,19 +171,19 @@ Then look at **Events**. Find the root cause.
 For the broken Pod, answer:
 
 **Question 1:** What is the Pod status?  
-*Answer:*  
+*Answer:*  ImagePullBackOff
 
 **Question 2:** What is the actual error?  
-*Answer:*  
+*Answer:*  Kubernetes failed to pull the image because the specified image/tag was not found on Docker Hub.
 
 **Question 3:** Which command helped you find the reason?  
-*Answer:*  
+*Answer:*  kubectl describe pod project-broken-pod
 
 **Question 4:** What is wrong with the image?  
-*Answer:*  
+*Answer:*  The image name is invalid because it contains a typo in the tag.
 
 **Question 5:** How would you fix it?  
-*Answer:*  
+*Answer:*  Run the `kubectl delete pod project-broken-pod` command to remove the faulty pod, then apply the fixed `deployment.yaml` with the correct image tag.
 
 ---
 
